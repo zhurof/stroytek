@@ -1,0 +1,403 @@
+﻿/*hover-эффекты только в полной версии*/			
+@media(min-width: 992px)
+	.btn
+		transition: all .2s ease
+		&:hover
+			background-color: darken($red,5%)
+		&_thin:hover
+			background-color: $red
+			color: #fff
+		&_more:hover
+			background: none
+			transform: translateY(2px)
+		&_white:hover
+			background-color: #f2f2f2
+	.slick-arrow
+		transition: all .2s ease
+		&:hover
+			color: $red
+	.file-link
+		&:hover:before
+			color: $red
+	.header__menu
+		a
+			transition: all .2s ease
+			&:hover
+				color: $red
+		>li
+			&:hover>a
+				color: $red
+			&:hover>ul
+				display: block
+	.news-card__title,
+	.pagination,
+	.breadcrumbs,
+	.header__contact
+		a:hover
+			color: $red
+	.vacancies
+		&__contacts a:hover
+			text-decoration: underline
+	.footer
+		a
+			transition: all .2s ease
+			&:hover
+				color: $red
+				
+/*необычные карточки-слайды только на больших разрешениях*/
+@media(min-width: 1170px)
+	.slick-slider
+		.card			
+			&__pic
+				height: 305px
+			&__chars
+				top: 34px
+			&__char
+				padding: 8px 25px
+			&__text
+				padding: 44px 47px 32px
+				position: relative
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 30px
+					left: 20px
+					border-bottom: 40px solid #fff
+					border-left: 30px solid transparent
+					border-right: 30px solid transparent
+			&__head
+				margin: 0 0 4px
+			&__main
+				font-size: 13px
+				line-height: 20/13
+				width: calc(100% - 125px)
+				padding-right: 40px
+			&__address
+				padding-left: 1.7em
+			&__price
+				width: 125px
+				font-size: 14px
+				line-height: 16/14*1
+				em
+					font-size: 16px
+					line-height: 1
+			&__title
+				font-size: 20px
+				line-height: 24/20*1
+				position: relative
+				margin: 0 0 .7em
+
+/*адаптив как таковой*/				
+@media(max-width: 1279px)
+	.portfolio
+		&__arrow
+			top: auto
+			bottom: 15px
+			&.prev
+				left: 0
+			&.next
+				right: 0
+			
+@media(max-width:1169px)
+	.wrapper
+		max-width: 992px
+	.header
+		&__menu
+			>li>a
+				padding: 17px 10px
+	.top-block
+		&:after
+			width: 50%
+			left: 50%
+	.news-card
+		width: 300px
+		&__title
+			font-size: 14px
+	.advantages-block
+		&__item
+			width: 300px
+	.contact
+		width: 300px
+		padding: 25px
+	.partners
+		&__box
+			justify-content: center
+		&__logo
+			width: 135px
+	.footer
+		&__item
+			width: 218px
+  
+@media(max-width:991px)
+	.box
+		justify-content: center
+	.menu-btn
+		display: inline-block
+		cursor: pointer
+		font-size: 25px
+		line-height: 1.5
+		width: 1.5em
+		text-align: center
+		font-family: 'Font Awesome 5 Pro'
+		font-weight: bold
+		-webkit-tap-highlight-color: transparent
+		transition: all .3s ease-out
+		&:before
+			content: '\f0c9'
+		&.active
+			color: $red
+			transform: perspective(30px) rotate3d(0,1,0,180deg)
+			&:before
+				content: '\f00d'
+	.header
+		position: relative
+		&__logo
+			width: 80px
+			margin: 0 15px 0 0
+		&__btn,&__contacts
+			display: none
+		&__bottomline
+			position: absolute
+			z-index: 3
+			top: 100%
+			left: 0
+			width: 100%
+			text-align: center
+			padding: 25px 0
+			transition: all .3s ease-in-out
+			transform-origin: center top
+			transform: perspective(100vh) rotate3d(1,0,0,-90deg)
+			pointer-events: none
+			&.open
+				transform: perspective(100vh) rotate3d(1,0,0,0deg)
+				pointer-events: all
+			.wrapper
+				display: block
+		&__menu
+			display: block
+			animation: fadeIn .4s ease-in-out
+			&.clone
+				display: block
+			&:nth-child(n+2)
+				display: none
+			>li
+				display: block
+				&:after,&:first-child:before
+					display: none
+				>a
+					padding: 10px
+					-webkit-tap-highlight-color: transparent
+				&.has-children>a
+					margin-left: 10px
+					&:after
+						content: '\f105'
+						font-family: 'Font Awesome 5 Pro'
+						margin: 0 0 0 10px
+			.back
+				font-weight: bold
+				color: $red
+	.top-block
+		text-align: center
+		&:after
+			display: none
+		&__text
+			max-width: 100%
+	.portfolio
+		&__head
+			display: block
+			margin: 0 0 20px
+		&__title
+			margin: 0 0 1em	
+	.news-block
+		&__box
+			display: block
+			margin: 0
+		.news-card
+			width: auto
+			margin: 0 0 30px
+	.advantages-block
+		&__box
+			display: block
+			margin: 0
+		&__item
+			width: auto
+			margin: 0 0 30px
+	.catalog
+		&__head
+			display: block
+			margin: 0 0 30px
+		&__title
+			margin: 0 0 1em
+	.object
+		&__title
+			margin: 0 0 1em
+		&__inner
+			display: block
+		&__content
+			width: auto
+			margin: 0 0 30px
+		&__more
+			margin: 0 0 40px
+		&__sidebar
+			width: auto
+			margin: 0
+	.widget
+		&__btn
+			max-width: 255px
+			margin: 25px auto 0
+	.form
+		&__btn
+			max-width: 255px
+			margin: 0 auto
+	.vacancies
+		&__inner
+			display: block
+		&__column
+			width: auto
+	.contact
+		width: auto
+		margin: 0 0 15px
+	.contacts
+		&__box
+			display: block
+			margin: 0
+		&__info
+			position: static
+			width: auto
+			transform: none
+			background-color: rgba(37,44,65,.95)
+		&__map
+			height: 290px
+	.post
+		&__image
+			display: block
+			float: none
+			max-width: 100%
+			margin: 0 auto 1em
+	.footer
+		&__topline
+			padding: 30px 0
+			text-align: center
+		&__box
+			display: block
+			margin: 0
+		&__item
+			margin: 0
+			width: auto
+			&:nth-child(n+2)
+				display: none	
+				
+@media(max-width:767px)
+	.triangle-title
+		font-size: 28px
+	.breadcrumbs
+		padding: 25px 0
+	.top-block
+		&__title
+			font-size: 34px
+	.about-block
+		padding: 50px 0 30px
+		&__box
+			display: block
+			margin: 0
+		&__column
+			width: auto
+			margin: 0 0 30px
+	.portfolio
+		padding: 50px 0 30px
+		margin: 0
+		&__slider
+			max-width: 350px
+			margin: 0 auto
+	.news-block
+		padding: 50px 0 30px
+	.about
+		&__title
+			margin: 0 0 .7em
+	.advantages-block
+		padding: 50px 0 30px	
+	.news-card
+		width: auto
+		margin: 0 0 30px
+	.news
+		&__head
+			display: block
+			margin: 0 0 30px
+		&__title
+			margin: 0 0 1em
+			text-align: center
+			&:before
+				display: none
+		&__sort
+			text-align: center
+			margin: 0
+		&__box
+			display: block
+			margin: 0
+	.catalog
+		padding: 14px 0 30px
+	.partners
+		padding: 14px 0 30px
+		&__logo
+			width: 120px
+	.slider
+		&__dots
+			bottom: 0
+	.widget
+		margin: 0 0 15px
+		padding: 25px 20px
+	.form
+		padding: 25px 20px
+	
+
+@media(max-width:479px)
+	h3
+		font-size: 17px
+	.triangle-title
+		text-align: center
+		&:before
+			display: none
+	.top-block
+		font-size: 10px
+		&__slide
+			padding: 77px 0
+		&__title
+			font-size: 24px
+		&__btn
+			margin: 1em 0 0
+		&__dots
+			bottom: 20px
+	.filter
+		text-align: center
+	.card
+		&__head
+			display: block
+			br
+				display: none
+		&__main
+			width: auto
+			margin: 0 0 1em			
+		&__price
+			width: auto
+			margin: 0
+			text-align: left
+	.widget__btn,.form__btn
+		max-width: 100%
+	.vacancies
+		&__contacts
+			padding: 20px
+	.vacancy
+		&__requirements
+			padding: 0 0 0 1.5em
+	.contacts
+		&__title
+			margin: 0 0 1em
+		&__info
+			padding: 20px
+		&__subtitle
+			text-indent: 0
+			margin: 0 0 1.5em
+			&:before
+				display: none
+	
